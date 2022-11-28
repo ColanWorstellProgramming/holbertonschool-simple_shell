@@ -1,6 +1,11 @@
 # Simple Shell
 
-Simple Shell
+creating a simple shell that can accept input and run commands.
+
+## Author's
+
+Colan Worstell
+Manuel Zambrano
 
 ## Usage
 
