@@ -1,6 +1,6 @@
 # Simple Shell
 
-creating a simple shell that can accept input and run commands.
+Creating a simple shell that can accept input and run commands.
 
 ## Author's
 
