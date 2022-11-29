@@ -6,13 +6,11 @@
  * @av: char
  * Return: Always 0.
  */
-int main(__attribute__((unused))int ac, char **av)
+ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 {
-    int i;
-    
-    for (i = 1; av[i] != NULL; i++)
-    {
-        printf("%s\n", av[i]);
-    }
-    return (0);
+	
+
+
 }
+
+
