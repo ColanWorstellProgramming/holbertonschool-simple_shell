@@ -5,13 +5,16 @@
  * 
  * Return: 0
  */
-int main(__attribute__((unused))int ac, char **av)
+int m_getline(char **av)
 {
     int i;
-    
+    char *buff;
+    size_t size;
+
     for (i = 1; av[i] != NULL; i++)
     {
         printf("$%s\n", av[i]);
     }
     return (0);
+
 }
