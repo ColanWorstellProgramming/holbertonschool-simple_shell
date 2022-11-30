@@ -26,7 +26,7 @@ int m_getline()
     exit(1);
     }
 
-    c = malloc(sizeof(input);
+    c = malloc(sizeof(input));
     if (c == NULL)
     {
     free(c);
@@ -42,19 +42,29 @@ int m_getline()
     }
     if (i > 0)
     {
+    if (c->arg == NULL)
+    {
+    
+    }
+    else
+    {
     if (c->arg->arg == NULL)
     {
     c->arg->arg = strtok(NULL, del);
     }
     else
     {
-    c->arg->next = strtok(NULL, del);
+    c->arg->next->arg = strtok(NULL, del);
     }
-    c->arg = c->arg->next;
-    i++
+    c->arg = b->arg->next;
+    i++;
     }
     }
-
+/**
+ * Test
+ */
+test();
+    }
     free(buff);
     return (0);
 }
