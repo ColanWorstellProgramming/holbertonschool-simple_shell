@@ -17,7 +17,7 @@ int m_getline()
     char *buff;
     size_t size;
     const char *del = " \t\n";
-    input *b = c;
+    s_args *b;
 
     buff = malloc(sizeof(char *));
     if (buff == NULL)
@@ -32,39 +32,53 @@ int m_getline()
     free(c);
     exit(1);
     }
+    
+    b = malloc(sizeof(s_args));
+    if (b == NULL)
+    {
+    free(b);
+    exit(1);
+    }
 
     while (getline(&buff, &size, stdin) != -1)
+    {
+    while(i < size)
     {
     if (i == 0)
     {
     c->command = strtok(buff, del);
-    i++;
+    printf("Command Stored\n");
     }
     if (i > 0)
     {
-    if (c->arg == NULL)
-    {
-    
-    }
-    else
-    {
+    printf("i > 0\n");
     if (c->arg->arg == NULL)
     {
-    c->arg->arg = strtok(NULL, del);
+    printf("main_getline c->arg->arg == NULL\n");;
+    b->arg = strtok(NULL, del);
+    c->arg->next = b;
     }
     else
     {
-    c->arg->next->arg = strtok(NULL, del);
+    b = c->arg->next;
+    printf("else\n");
+    while (b->arg != NULL)
+    {
+    b = c->arg->next;
+    printf("b arg != null\n");
     }
-    c->arg = b->arg->next;
+    printf("b arg was null\n");
+    b->arg = strtok(NULL, del);
+    }
+    
+    c->arg->next = b;
+    printf("%s\n", b->arg);
+    }
     i++;
     }
     }
-/**
- * Test
- */
-test();
-    }
+    free(c);
+    free(b);
     free(buff);
     return (0);
 }

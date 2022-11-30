@@ -36,8 +36,20 @@ test();
 void test()
 {
 
-if ((c == NULL) || (c->arg == NULL) || (c->arg->arg == NULL))
+if(c == NULL)
 {
+printf("C == NULL\n");
+free(c);
+exit(1);
+}
+else
+{
+printf("Command: %s\n", c->command);
+}
+
+if ((c->arg == NULL)) // || (c->arg->arg == NULL))
+{
+printf("Error Test Function Fail\n");
 free(c);
 exit(1);
 }
