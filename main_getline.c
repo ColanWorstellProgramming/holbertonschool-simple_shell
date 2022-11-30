@@ -11,7 +11,7 @@ int main(__attribute__((unused))int ac, char **av)
     
     for (i = 1; av[i] != NULL; i++)
     {
-        printf("$%s\n", av[i]);
+        printf("$ %s\n", av[i]);
     }
     return (0);
 }

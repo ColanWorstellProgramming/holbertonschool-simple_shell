@@ -1,10 +1,10 @@
 #include "shell.h"
-#include <stdio.h>
 /**
  * _getline -
  * @fp: buffer for user input
  * Return: buffer with user input
  */
+
 char *_getline(FILE *fp)
 {
 	char *line;
