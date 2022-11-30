@@ -10,6 +10,9 @@
 int main(int ac, char *av[])
 {
 
-m_getline(av);
+m_getline();
+
+(void) ac;
+(void) av;
 
 }

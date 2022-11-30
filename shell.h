@@ -1,6 +1,6 @@
-#ifndef _SHELL_H
-#define _SHELL_H
-#undef _SHELL_H
+#ifndef h
+#define h
+#undef h
 
 /**
  * Includes
@@ -8,24 +8,36 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
+#include <unistd.h>
 #include <string.h>
-#include <unistd.h>
 
-#define PROMPT "$ "
+/**
+ * Struct
+ */
 
-=======
-#include <unistd.h>
->>>>>>> 18261d74305ee7f793d46ad3d02f4de3304f2934
+typedef struct input
+{
+	char *command;
+	s_args *arg;
+} input;
+
+typedef struct s_args
+{
+	char *arg;
+	struct s_args *next;
+} s_args;
+
+/**
+ * Global
+ */
+
+extern input *c;
+
 /**
  * Prototypes
  */
 
 int main(int ac, char *av[]);
-<<<<<<< HEAD
-char *_getline(FILE *fp);
-=======
-int m_getline(char **av);
->>>>>>> 18261d74305ee7f793d46ad3d02f4de3304f2934
+int m_getline();
 
-#endif 
+#endif
