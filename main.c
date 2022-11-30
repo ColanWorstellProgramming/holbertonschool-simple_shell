@@ -36,6 +36,13 @@ test();
 void test()
 {
 
+if ((c == NULL) || (c->arg == NULL) || (c->arg->arg == NULL))
+{
+free(c);
+exit(1);
+}
+else
+{
 if (c->arg->arg != NULL)
 {
 printf("%s\n", c->arg->arg);
@@ -45,5 +52,5 @@ while (c->arg->next->arg != NULL)
 {
 printf("%s\n", c->arg->next->arg);
 }
-
+}
 }
