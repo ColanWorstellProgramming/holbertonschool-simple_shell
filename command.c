@@ -9,11 +9,8 @@
 void command(char **string)
 {
 
-	char *ex = "exit";
-
-	if (string[0] == ex)
+	if (_strcmp(string[0], "exit") == 0)
 	{
-	printf("exit");
 	exit(1);
 	}
 
