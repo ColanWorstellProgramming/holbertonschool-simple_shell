@@ -41,8 +41,8 @@ while (1)
 
 	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
 	{
-	printf("%d: %s\n", i, arg);
 	string[i] = arg;
+	command(*string);
 	i++;
 	}
 	}

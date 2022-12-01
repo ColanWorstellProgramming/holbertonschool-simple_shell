@@ -11,7 +11,6 @@ int main(int ac, char *av[])
 {
 
 loop();
-_fork();
 
 (void) ac;
 (void) av;
