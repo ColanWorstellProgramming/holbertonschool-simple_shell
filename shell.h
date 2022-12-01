@@ -12,38 +12,10 @@
 #include <string.h>
 
 /**
- * Struct
- */
-
-typedef struct s_args
-{
-	char *arg;
-	struct s_args *next;
-} s_args;
-
-typedef struct input
-{
-	char *command;
-	s_args *arg;
-} input;
-
-/**
- * Global
- */
-
-extern input *c;
-
-/**
  * Prototypes
  */
 
 int main(int ac, char *av[]);
-int m_getline();
-void freemem();
-
-/**
- * Test Proto
- */
-void test();
+void loop();
 
 #endif
