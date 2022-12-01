@@ -25,7 +25,7 @@ _fork();
 
 (void) ac;
 (void) av;
-
+return (1);
 }
 
 /**
@@ -36,6 +36,25 @@ _fork();
 void test()
 {
 
+if(c == NULL)
+{
+printf("C == NULL\n");
+free(c);
+exit(1);
+}
+else
+{
+printf("Command: %s\n", c->command);
+}
+
+if (c->arg == NULL)
+{
+printf("Error Test Function Fail\n");
+freemem();
+exit(1);
+}
+else
+{
 if (c->arg->arg != NULL)
 {
 printf("%s\n", c->arg->arg);
@@ -45,5 +64,6 @@ while (c->arg->next->arg != NULL)
 {
 printf("%s\n", c->arg->next->arg);
 }
-
+}
+freemem();
 }
