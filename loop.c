@@ -10,7 +10,7 @@ void loop()
 
 int i;
 char *buff;
-size_t size;
+size_t size = 1;
 const char *del = " \t\n";
 
 char **string;
@@ -41,8 +41,8 @@ while (1)
 
 	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
 	{
-	printf("%d: %s\n", i, arg);
 	string[i] = arg;
+	command(string);
 	i++;
 	}
 	}
