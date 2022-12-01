@@ -39,11 +39,11 @@ extern input *c;
 
 int main(int ac, char *av[]);
 int m_getline();
+void freemem();
 
 /**
  * Test Proto
  */
-
 void test();
 
 #endif

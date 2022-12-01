@@ -33,10 +33,18 @@ int m_getline()
     exit(1);
     }
     
+    c->arg = malloc(sizeof(s_args));
+    if (c->arg == NULL)
+    {
+    free(c->arg);
+    freemem();
+    exit(1);
+    }
+
     b = malloc(sizeof(s_args));
     if (b == NULL)
     {
-    free(b);
+    freemem();
     exit(1);
     }
 
@@ -52,6 +60,10 @@ int m_getline()
     if (i > 0)
     {
     printf("i > 0\n");
+    if (c->arg == NULL)
+    {
+    printf("c->arg == NULL");
+    }
     if (c->arg->arg == NULL)
     {
     printf("main_getline c->arg->arg == NULL\n");;
@@ -76,9 +88,9 @@ int m_getline()
     }
     i++;
     }
-    }
     free(c);
-    free(b);
+    freemem();
+    }
     free(buff);
     return (0);
 }

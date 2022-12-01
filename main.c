@@ -50,7 +50,7 @@ printf("Command: %s\n", c->command);
 if ((c->arg == NULL)) // || (c->arg->arg == NULL))
 {
 printf("Error Test Function Fail\n");
-free(c);
+freemem();
 exit(1);
 }
 else
@@ -65,4 +65,5 @@ while (c->arg->next->arg != NULL)
 printf("%s\n", c->arg->next->arg);
 }
 }
+freemem();
 }
