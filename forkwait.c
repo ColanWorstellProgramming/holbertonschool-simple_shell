@@ -1,6 +1,5 @@
 #include "shell.h"
-#include <sys/type.h>
-#include <sys/wait.h>
+
 /**
  *
  *
