@@ -24,12 +24,12 @@ extern char **environ;
  */
 
 int main(int ac, char *av[]);
-void loop();
 int _fork();
 int probandofork();
-int check_cmd();
 int _strcmp(char *s1, char *s2);
 int _strncmp(const char *s1, const char *s2, size_t n);
+void loop();
+void command(char **string);
 
 /**
  * error handle and Printer 
@@ -41,6 +41,6 @@ void print_error(char *line, int c, char **argv);
  * */
 
 int path_cmd(char **line);
-int check_cmd(char **tokens, char *line, int count, char **argv);
+int check_cmd(char **cmd, char *input, int c, char **argv);
 
 #endif

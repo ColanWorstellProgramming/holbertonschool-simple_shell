@@ -9,6 +9,12 @@
 void command(char **string)
 {
 
-if (string[0]
-	
+	char *ex = "exit";
+
+	if (string[0] == ex)
+	{
+	printf("exit");
+	exit(1);
+	}
+
 }
