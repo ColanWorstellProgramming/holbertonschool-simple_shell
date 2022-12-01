@@ -10,25 +10,37 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+
+/**
+ * environ var
+ * */
+
+extern char **environ;
 
 /**
  * Prototypes
  */
 
 int main(int ac, char *av[]);
-<<<<<<< HEAD
 void loop();
-=======
-int m_getline();
 int _fork();
-void freemem();
 int probandofork();
 int check_cmd();
+int _strcmp(char *s1, char *s2);
+int _strncmp(const char *s1, const char *s2, size_t n);
 
 /**
- * Test Proto
- */
-void test();
->>>>>>> 3d811f1a5e28866a7c23a4ab7f839a018826ca05
+ * error handle and Printer 
+ **/
+void print_error(char *line, int c, char **argv);
+
+/** 
+ * Command parser and extractor
+ * */
+
+int path_cmd(char **line);
+int check_cmd(char **tokens, char *line, int count, char **argv);
 
 #endif
