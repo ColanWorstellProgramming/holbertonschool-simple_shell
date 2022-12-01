@@ -25,7 +25,7 @@ test();
 
 (void) ac;
 (void) av;
-
+return (1);
 }
 
 /**
@@ -47,7 +47,7 @@ else
 printf("Command: %s\n", c->command);
 }
 
-if ((c->arg == NULL)) // || (c->arg->arg == NULL))
+if (c->arg == NULL)
 {
 printf("Error Test Function Fail\n");
 freemem();
