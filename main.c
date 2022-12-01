@@ -12,7 +12,7 @@ int main(int ac, char *av[])
 
 loop();
 _fork();
-int check_cmd(char **cmd, char *input, int c, char **argv);
+int check_cmd(char **cmd, char *input, int c, char **arg);
 
 (void) ac;
 (void) av;
