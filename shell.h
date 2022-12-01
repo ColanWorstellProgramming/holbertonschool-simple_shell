@@ -39,12 +39,11 @@ extern input *c;
 
 int main(int ac, char *av[]);
 int m_getline();
-<<<<<<< HEAD
 int _fork();
-=======
 void freemem();
+int probandofork();
+int check_cmd();
 
->>>>>>> 14db089b11685622e6338ba7461f3a2e4ac63978
 /**
  * Test Proto
  */
