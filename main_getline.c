@@ -89,8 +89,9 @@ int m_getline()
     i++;
     }
     free(c);
+    free(b);
+    free(buff);
     freemem();
     }
-    free(buff);
     return (0);
 }
