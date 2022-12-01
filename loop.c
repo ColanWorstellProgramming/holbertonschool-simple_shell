@@ -32,7 +32,7 @@ while (1)
 	if (getline(&buff, &size, stdin) != -1)
 	{
 	
-	string = malloc(sizeof(char *) * size);
+	string = malloc(sizeof(char *));
 	if (string == NULL)
 	{
 	free(string);
