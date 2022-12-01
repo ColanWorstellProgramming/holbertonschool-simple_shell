@@ -39,7 +39,7 @@ extern input *c;
 
 int main(int ac, char *av[]);
 int m_getline();
-
+int _fork();
 /**
  * Test Proto
  */

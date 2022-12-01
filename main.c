@@ -16,12 +16,12 @@ input *c;
 int main(int ac, char *av[])
 {
 
-m_getline();
-
+//m_getline();
+_fork();
 /**
  * Test Function
  */
-test();
+//test();
 
 (void) ac;
 (void) av;
