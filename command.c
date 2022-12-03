@@ -16,7 +16,7 @@ void command(char **string)
 
 	if (_strcmp(string[0], "exit") == 0)
 	{
-	_exit(1);
+	exit(1);
 	}
 
 }
