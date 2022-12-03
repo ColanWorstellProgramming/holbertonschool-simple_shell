@@ -2,8 +2,8 @@
 
 /**
  * command - parses commands
- * @string:
- * Return: 
+ * @string: char
+ * Return: void
  */
 
 void command(char **string)
