@@ -2,7 +2,8 @@
 
 Creating a simple shell that can accept input and run commands. 
 It is a command line interpreter, which takes the most basic commands and executes them. 
-This shell works by compiling with versions of GCC 4.8.5 or later, it can be compiled using gcc 4.8.4 -Wall -Werror -Wextra -pedantic *.c -o shell.
+This shell works by compiling with versions of GCC 4.8.5 or later, it can be compiled
+using `gcc -Wall -Werror -Wextra -pedantic *.c -o shell`
 
 ## Author's
 
