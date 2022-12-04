@@ -22,7 +22,7 @@ using `gcc -Wall -Werror -Wextra -pedantic *.c -o shell`
 
 ## Author's
 
-Colan Worstell
+- Colan Worstell
 - Manuel Zambrano
 
 ## Usage
