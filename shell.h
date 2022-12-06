@@ -1,6 +1,6 @@
-#ifndef h
-#define h
-#undef h
+#ifndef SHELL_H
+#define SHELL_H
+#undef SHELL_H
 
 /**
  * Includes
