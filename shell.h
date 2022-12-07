@@ -31,6 +31,8 @@ char *_strdup(char *str);
 int _strlen(char *s);
 char *_strstr(char *haystack, char *needle);
 char *getpath();
+char **spath();
+char **parse(char *s);
 
 int probandofork(void);
 int _fork(void);
