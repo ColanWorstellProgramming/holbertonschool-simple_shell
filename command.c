@@ -9,9 +9,6 @@
 int command(char **string)
 {
 
-	char **s = NULL;
-	int i;
-
 	if (_strcmp(string[0], "exit") == 0)
 	{
 		fflush(stdout);
@@ -26,16 +23,8 @@ int command(char **string)
 	else
 	{
 
-		s = spath();
-		
-		for (i = 0; s[i] != NULL; i++)
-		{
-			printf("I: %d | PATH |%s\ns[%d+1] = %s\n", i, s[i], i+1, s[i+1]);
-		}
 	}
 
-	free(s);
-	s = NULL;
 	return (0);
 }
 
@@ -48,7 +37,9 @@ int command(char **string)
 char **spath()
 {
 	char **string = NULL;
-	char *path = getpath();
+	char *path = NULL;
+	
+	path = getpath();
 
 	string = parse(path);
 

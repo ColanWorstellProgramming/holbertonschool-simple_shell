@@ -34,7 +34,6 @@ char **parse(char *s)
 			for (two = strtok(s, del); two != NULL; two = strtok(NULL, del))
 			{
 				string[i] = two;
-				printf("string[%d]: %s\n", i, string[i]);
 				i++;
 			}
 			
