@@ -5,11 +5,12 @@
  *
  */
 
-int _fork()
+void _fork(void)
 {
 	int pid;
 	pid = fork();
-
+	printf("%d\n", pid);
+		
 	if (pid > 0)
 	{ 
 	printf("im the parent process\n");

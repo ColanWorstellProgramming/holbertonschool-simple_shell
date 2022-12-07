@@ -32,7 +32,7 @@ char *_strdup(char *str);
 int _strlen(char *s);
 
 int probandofork(void);
-int _fork(void);
+void _fork(void);
 
 /**
  * error handle and Printer

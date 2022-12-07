@@ -8,10 +8,11 @@
  * Return: int value
  */
 int main(int ac, char *av[])
+
 {
-
+_execve();
+_fork();
 loop();
-
 (void) ac;
 (void) av;
 return (1);
