@@ -35,7 +35,7 @@ char **spath();
 char **parse(char *s);
 
 int probandofork(void);
-void _fork(void);
+int _fork(void);
 
 /**
  * error handle and Printer
