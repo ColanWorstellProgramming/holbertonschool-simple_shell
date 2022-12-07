@@ -10,16 +10,19 @@ void loop(void)
 int i;
 int amount;
 int gline;
+size_t size;
 char *buff;
 char *two;
 char *copy;
-size_t size;
 const char *del = " \t\n";
 char **string;
 char *arg;
 
 while (1)
 {
+	
+	printf("$ ");
+
 	buff = malloc(sizeof(char *));
 	if (buff == NULL)
 	{
@@ -27,13 +30,11 @@ while (1)
 	exit(1);
 	}
 
+	size = 1;
 	i = 0;
 	amount = 1;
 	gline = -1;
-	size = 1;
 
-	printf("$ ");
-	
 	gline = getline(&buff, &size, stdin);
 	copy = _strdup(buff);
 

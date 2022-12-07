@@ -26,5 +26,4 @@ void freemem(char **string)
 
 	free(string);
 	string = NULL;
-
 }
