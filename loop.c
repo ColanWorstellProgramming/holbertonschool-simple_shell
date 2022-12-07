@@ -34,9 +34,6 @@ void loop(void)
 		gline = getline(&buff, &size, stdin);
 		copy = _strdup(buff);
 
-		printf("copy: %s\taddress: %p\n", copy, copy);
-		printf("buff: %s\taddress: %p\n", buff, buff);
-	
 		if (_strcmp(buff, "\n") == 0)
 		{
 			continue;
@@ -51,14 +48,12 @@ void loop(void)
 			string = malloc(sizeof(char *) * (amount));
 			if (string == NULL)
 			{
-				printf("String Malloc Fail\n");
 				free(buff);
 				exit(1);
 			}
 
 			for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
 			{
-				printf("i = %d\n", i);
 				string[i] = two;
 				i++;
 			}
