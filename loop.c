@@ -67,10 +67,12 @@ void loop(void)
 			{
 				free(buff);
 				free(string);
+				free(copy);
 				exit(1);
 			}
 		}
 		free(string);
 		free(buff);
+		free(copy);
 	}
 }
