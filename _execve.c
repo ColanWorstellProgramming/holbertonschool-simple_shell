@@ -2,17 +2,11 @@
 /**
  * main - 
  *
- * Return:0
+ * Return: -1
  */
-int main (int ac, char *av[])
-{
-	char *argv[] = {"/bin/ls", "-1", NULL};
-	int val = execve(argv[0], argv, NULL);
-	if (val == -1)
-		perror("Error");
-	printf("Done with execve\n");
-	return 0;
-(void) ac;
-(void) av;
+int main(void) {
+	char *argumentos [] = {"/bin/ls", "-l", NULL};
+	execv("/bin/ls", argumentos);
+	printf("Termino!!!");
+	return EXIT_SUCCESS;
 }
-
