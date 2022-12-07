@@ -33,7 +33,7 @@ while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
 
 char *_strdup(char *str)
 {
-	char *y;
+	char *y = NULL;
 	int i;
 
 	if (str == NULL)
@@ -46,6 +46,9 @@ char *_strdup(char *str)
 	{
 		y[i] = str[i];
 	}
+
+	y[i] = '\0';
+
 	return (y);
 }
 

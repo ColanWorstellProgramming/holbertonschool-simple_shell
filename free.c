@@ -21,6 +21,7 @@ void freemem(char **string)
 		x--;	
 		printf("Free String[%d]: %s\n", x, string[x]);
 		free(string[x]);
+		printf("Just Free'd: %d\n", x);
 		string[x] = NULL;
 	}
 
