@@ -34,6 +34,8 @@ int command(char **string)
 		}
 	}
 
+	free(s);
+	s = NULL;
 	return (0);
 }
 
