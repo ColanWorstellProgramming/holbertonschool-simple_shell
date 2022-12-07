@@ -5,26 +5,25 @@
  *
  */
 
-int main()
-
+int _fork()
 {
 	int pid;
 	pid = fork();
 
 	if (pid > 0)
 	{ 
-	printf("soy el proceso padre\n");
+	printf("im the parent process\n");
 	}
 	else{
 		if (pid == 0)
 	{
 		{
-		printf("soy el proceso hijo\n");
+		printf("im the child process\n");
 		}
+	}
 		else
 		{
 		printf("Error\n");
 		}
 	}
-
 }

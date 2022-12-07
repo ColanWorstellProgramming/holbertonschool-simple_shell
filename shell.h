@@ -23,13 +23,11 @@ extern char **environ;
  * Prototypes
  */
 
-int main(int ac, char *av[]);
 void loop(void);
 void command(char **string);
 void freemem(char **string);
 
 int _strcmp(char *s1, char *s2);
-int _strncmp(const char *s1, const char *s2, size_t n);
 char *_strdup(char *str);
 int _strlen(char *s);
 
@@ -50,3 +48,4 @@ int path_cmd(char **line);
 int check_cmd(char **cmd, char *input, int c, char **argv);
 
 #endif
+
