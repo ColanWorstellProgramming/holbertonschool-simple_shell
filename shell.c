@@ -1,15 +1,5 @@
 #include "shell.h"
 
-int main(int ac, char *av[])
-{
-
-loop();
-
-(void) ac;
-(void) av;
-return (1);
-}
-
 
 
 int _fork(void)
@@ -41,71 +31,6 @@ int _fork(void)
 		printf("proc. PID = %d , var = %d ejecutandose \n", getpid(), var);
 	}
 	return 0;
-}
-
-
-
-int _strcmp(const char *str1, const char *str2){
-	int i = 0;
-	while (str1[i] != '\0' && str2[i] != '\0'){
-		if (str1[i] != str2[i]){
-			return str1[i] - str2[i];
-		}
-		i++;
-	}
-
-	if (str1[i] != str2[i]){
-		return str1[i] - str2[i];
-	}
-
-	return 0;
-}
-
-int _strncmp(const char *str1, const char *str2, size_t n){
-	int i;
-	for (i = 0; i < n && str1[i] != '\0' && str2[i] != '\0'; i++){
-		if (str1[i] != str2[i]){
-			return str1[i] - str2[i];
-		}
-	}
-	return 0;
-}
-
-void loop(void)
-{
-int i;
-char *buff;
-size_t size = 1;
-const char *del = " \t\n";
-char **string;
-char *arg;
-
-while (1)
-{
-	buff = malloc(sizeof(char *));
-	if (buff == NULL)
-	{
-	free(buff);
-	exit(1);
-	}
-	i = 0;
-	printf("$ ");
-	if (getline(&buff, &size, stdin) != -1)
-	{
-	string = malloc(sizeof(char *));
-	if (string == NULL)
-	{
-	free(string);
-	exit(1);
-	}
-	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
-	{
-	string[i] = arg;
-	command(string);
-	i++;
-	}
-	}
-}
 }
 
 
@@ -178,4 +103,5 @@ char * strtok(char str[], const char *delims){
    //Retorna el array con las palabras
    return token;
 }
+
 
