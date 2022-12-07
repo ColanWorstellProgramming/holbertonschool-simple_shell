@@ -24,12 +24,17 @@ extern char **environ;
  */
 
 int main(int ac, char *av[]);
-int _fork(void);
-int probandofork(void);
-int _strcmp(char *s1, char *s2);
-int _strncmp(const char *s1, const char *s2, size_t n);
 void loop(void);
 void command(char **string);
+void freemem(char **string);
+
+int _strcmp(char *s1, char *s2);
+int _strncmp(const char *s1, const char *s2, size_t n);
+char *_strdup(char *str);
+int _strlen(char *s);
+
+int probandofork(void);
+int _fork(void);
 
 /**
  * error handle and Printer

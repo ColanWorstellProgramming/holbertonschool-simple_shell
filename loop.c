@@ -8,8 +8,12 @@
 void loop(void)
 {
 int i;
+int amount;
+int gline;
 char *buff;
-size_t size = 1;
+char *two;
+char *copy;
+size_t size;
 const char *del = " \t\n";
 char **string;
 char *arg;
@@ -22,22 +26,48 @@ while (1)
 	free(buff);
 	exit(1);
 	}
+
 	i = 0;
+	amount = 1;
+	gline = -1;
+	size = 1;
+
 	printf("$ ");
-	if (getline(&buff, &size, stdin) != -1)
+	
+	gline = getline(&buff, &size, stdin);
+	copy = _strdup(buff);
+
+	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
 	{
-	string = malloc(sizeof(char *));
+	amount++;
+	arg = strtok(NULL, del);
+	}
+	
+	if (gline != -1)
+	{
+	string = malloc(sizeof(char *) * amount);
 	if (string == NULL)
 	{
 	free(string);
+	free(buff);
 	exit(1);
 	}
-	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
+
+	for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
 	{
-	string[i] = arg;
-	command(string);
+	printf("i = %d\n", i);
+	string[i] = two;
 	i++;
 	}
+	printf("final i = %d\n", i);
+	string[i] = NULL;
+
+	if (_strcmp(string[0], "exit") == 0)
+	{
+	freemem(string);
+	exit(1);
 	}
+	}
+	freemem(string);
 }
 }
