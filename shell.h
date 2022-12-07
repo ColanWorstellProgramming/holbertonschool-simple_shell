@@ -24,12 +24,13 @@ extern char **environ;
  */
 
 void loop(void);
-void command(char **string);
-void freemem(char **string);
+int command(char **string);
 
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 int _strlen(char *s);
+char *_strstr(char *haystack, char *needle);
+char *getpath();
 
 int probandofork(void);
 int _fork(void);
