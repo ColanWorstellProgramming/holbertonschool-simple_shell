@@ -10,6 +10,7 @@ void loop(void)
 	int i;
 	int amount;
 	int gline;
+	int j;
 	size_t size;
 	char *buff;
 	char *two = NULL;
@@ -21,11 +22,11 @@ void loop(void)
 
 	while (1)
 	{
-	
+		
 		printf("$ ");
 
 		buff = NULL;
-		
+		j = 0;
 		size = 1;
 		i = 0;
 		amount = 1;
@@ -58,16 +59,16 @@ void loop(void)
 				i++;
 			}
 			
-			if (_strcmp(string[0], "exit") == 0)
-			{
-				free(buff);
-				free(string);
-				free(copy);
-				exit(1);
-			}
 		}
+
+		j = command(string);
 		free(string);
 		free(buff);
 		free(copy);
+
+		if (j == 1)
+		{
+			exit(j);
+		}
 	}
 }
