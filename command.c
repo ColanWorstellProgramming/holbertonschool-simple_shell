@@ -9,14 +9,15 @@
 void command(char **string)
 {
 
-	if (execve("", string, NULL) == -1)
-	{
-	perror("Error:");
-	}
-
 	if (_strcmp(string[0], "exit") == 0)
 	{
+	fflush(stdout);
 	exit(1);
+	}
+
+	if (_strcmp(string[0], "env") == 0)
+	{
+	
 	}
 
 }

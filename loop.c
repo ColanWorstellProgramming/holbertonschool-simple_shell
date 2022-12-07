@@ -10,9 +10,9 @@ void loop(void)
 int i;
 int amount;
 int gline;
-int x;
 char *buff;
 char *two;
+char *copy;
 size_t size;
 const char *del = " \t\n";
 char **string;
@@ -35,11 +35,12 @@ while (1)
 	printf("$ ");
 	
 	gline = getline(&buff, &size, stdin);
-	two = _strdup(buff);
-	
+	copy = _strdup(buff);
+
 	for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
 	{
 	amount++;
+	arg = strtok(NULL, del);
 	}
 	
 	if (gline != -1)
@@ -51,31 +52,22 @@ while (1)
 	free(buff);
 	exit(1);
 	}
-	for (two = strtok(buff, del); two != NULL; two = strtok(NULL, del))
+
+	for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
 	{
+	printf("i = %d\n", i);
 	string[i] = two;
 	i++;
 	}
+	printf("final i = %d\n", i);
+	string[i] = NULL;
+
 	if (_strcmp(string[0], "exit") == 0)
 	{
-	free(buff);
-	x = 0;
-	while (string[x] != NULL)
-	{
-	free(string[x]);
-	x++;
-	}
-	free(string);
+	freemem(string);
 	exit(1);
 	}
 	}
-	free(buff);
-	x = 0;
-	while (string[x] != NULL)
-	{
-	free(string[x]);
-	x++;
-	}
-	free(string);
+	freemem(string);
 }
 }
