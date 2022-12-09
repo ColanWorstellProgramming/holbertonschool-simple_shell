@@ -26,6 +26,7 @@ int command(char **string, char **s)
 	{
 
 		r = whichc(string, s);
+		_execve(r, 
 		printf("Location : %s\n", r);
 /*		execve("path", "command+arguments", NULL);
 *
