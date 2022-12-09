@@ -4,9 +4,13 @@
  *
  * Return: -1
  */
-int main(void) {
-	char *argumentos [] = {"/bin/ls", "-l", NULL};
-	execv("/bin/ls", argumentos);
-	printf("Termino!!!");
-	return EXIT_SUCCESS;
+int main(int argc, char*, argv[])
+{
+	char *const argv2[] = {"prog2", "abcdef", "ghij", NULL};
+
+	printf("%s : %i \n", argv[0], getpid());
+	execve("./nameprogra", argv2);
+
+	printf("Error \n");
+	return -1;
 }
