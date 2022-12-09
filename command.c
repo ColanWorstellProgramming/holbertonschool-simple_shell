@@ -6,7 +6,7 @@
  * Return: void
  */
 
-int command(char **string, char **s)
+int command(char **string, char **s, char *buff)
 {
 
 	char *r = NULL;
