@@ -26,8 +26,10 @@ int command(char **string, char **s)
 	{
 
 		r = whichc(string, s);
-		_execve(r, string);
-		printf("Location : %s\n", r);
+/**
+ * 		_execve(r, string);
+ */
+		 printf("Location : %s\n", r);
 	}
 
 	return (0);
@@ -73,33 +75,29 @@ char *whichc(char **string, char **s)
 		free(comb);
 		comb = NULL;
 
-		printf("Comb | %s\n", comb2);
-
 		if (access(comb2, F_OK) == 0)
 		{
 			r = _strdup(comb2);
+			free(comb2);
+			comb2 = NULL;
 			break;
 		}
 		else
 		{
 			printf("File Does Not Exist Within %s\n", s[i]);
+	
+			free(comb2);
+			comb2 = NULL;
+
 		}
 
 	}
-	
-	printf("Comb Before Free | %s\nR | %s\n", comb2, r);
-
-	free(comb2);
-	comb2 = NULL;
-
-	printf("R before if check | %s\n", r);
 
 	if (r == NULL)
 	{
 		printf("File Not Found\n");
+		return (r);
 	}
 	
-	printf("R after if check | %s\n", r);
-
 	return (r);
 }

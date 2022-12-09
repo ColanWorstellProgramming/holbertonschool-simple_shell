@@ -10,7 +10,8 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *y;
-	int i, x;
+	int i = 0;
+	int x = 0;
 
 	if (s1 == NULL)
 	{
@@ -36,7 +37,7 @@ char *str_concat(char *s1, char *s2)
 		y[i + x] = s2[x];
 	}
 
-	y[_strlen(s1) + _strlen(s2) + 1] = '\0';
+	y[_strlen(s1) + _strlen(s2)] = '\0';
 
 	return (y);
 }
