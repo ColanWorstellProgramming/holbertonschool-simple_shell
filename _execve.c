@@ -4,7 +4,7 @@
  *
  * Return: -1
  */
-int _execve(char *s, char *string)
+int _execve(char *s, char **string)
 {
 	execve(s, string, NULL);
 

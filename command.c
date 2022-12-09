@@ -6,7 +6,7 @@
  * Return: void
  */
 
-int command(char **string, char **s, char *buff)
+int command(char **string, char **s)
 {
 
 	char *r = NULL;
@@ -26,11 +26,8 @@ int command(char **string, char **s, char *buff)
 	{
 
 		r = whichc(string, s);
-		_execve(r, buff, NULL);
+		_execve(r, string);
 		printf("Location : %s\n", r);
-/*		execve("path", "command+arguments", NULL);
-*
-*/
 	}
 
 	return (0);
