@@ -24,7 +24,7 @@ extern char **environ;
  */
 
 void loop(char **s);
-int command(char **string, char **s);
+int command(char **string, char **s, char *buff);
 
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);

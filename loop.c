@@ -61,7 +61,7 @@ void loop(char ** s)
 			
 		}
 
-		j = command(string, s);
+		j = command(string, s, buff);
 		free(string);
 		free(buff);
 		free(copy);
