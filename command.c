@@ -9,6 +9,8 @@
 int command(char **string, char **s)
 {
 
+	char *r = NULL;
+
 	if (_strcmp(string[0], "exit") == 0)
 	{
 		fflush(stdout);
@@ -22,7 +24,9 @@ int command(char **string, char **s)
 
 	else
 	{
-		printf("Location : %s\n", whichc(string, s));
+
+		r = whichc(string, s);
+		printf("Location : %s\n", r);
 /*		execve("path", "command+arguments", NULL);
 *
 */
@@ -75,7 +79,7 @@ char *whichc(char **string, char **s)
 
 		if (access(comb2, F_OK) == 0)
 		{
-			r = comb2;
+			r = _strdup(comb2);
 			break;
 		}
 		else
@@ -84,15 +88,20 @@ char *whichc(char **string, char **s)
 		}
 
 	}
+	
+	printf("Comb Before Free | %s\nR | %s\n", comb2, r);
 
 	free(comb2);
 	comb2 = NULL;
 
-	if (r != NULL)
-	{
-		return (r);
-	}
+	printf("R before if check | %s\n", r);
 
-	printf("File Not Found");
+	if (r == NULL)
+	{
+		printf("File Not Found\n");
+	}
+	
+	printf("R after if check | %s\n", r);
+
 	return (r);
 }
