@@ -23,16 +23,19 @@ extern char **environ;
  * Prototypes
  */
 
-void loop(void);
-int command(char **string);
+void loop(char **s);
+int command(char **string, char **s);
 
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 int _strlen(char *s);
 char *_strstr(char *haystack, char *needle);
+char *str_concat(char *s1, char *s2);
+
 char *getpath();
 char **spath();
 char **parse(char *s);
+char *whichc(char **string, char **s);
 
 int probandofork(void);
 int _fork(void);

@@ -5,7 +5,7 @@
  *
  * Return:
  */
-void loop(void)
+void loop(char ** s)
 {
 	int i;
 	int amount;
@@ -61,13 +61,15 @@ void loop(void)
 			
 		}
 
-		j = command(string);
+		j = command(string, s);
 		free(string);
 		free(buff);
 		free(copy);
 
 		if (j == 1)
 		{
+			free(s);
+			s = NULL;
 			exit(j);
 		}
 	}

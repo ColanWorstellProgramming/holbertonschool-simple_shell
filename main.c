@@ -10,16 +10,19 @@
 int main(int ac, char *av[])
 {
 
-char **s = NULL;
+	int i = 0;
+	char **s = NULL;
 
-s = spath();
+	s = spath();
+	
+	for (i = 0; s[i] != NULL; i++)
+	{
+		printf("Paths | %s\n", s[i]);
+	}
+	
+	loop(s);
 
-free(s);
-s = NULL;
-
-loop();
-
-(void) ac;
-(void) av;
-return (1);
+	(void) ac;
+	(void) av;
+	return (1);
 }
