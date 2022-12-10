@@ -25,7 +25,10 @@ void loop(char **s)
 	while (1)
 	{
 
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+		}
 
 		buff = NULL;
 		j = 0;
@@ -35,6 +38,7 @@ void loop(char **s)
 		gline = -1;
 
 		gline = getline(&buff, &size, stdin);
+
 		copy = _strdup(buff);
 
 		if (_strcmp(buff, "\n") == 0)
@@ -48,7 +52,6 @@ void loop(char **s)
 
 		if (gline == -1)
 		{
-			printf("\n");
 			free(buff);
 			free(copy);
 			free(s);
