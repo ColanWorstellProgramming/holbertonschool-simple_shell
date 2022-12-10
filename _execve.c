@@ -1,5 +1,7 @@
 #include "shell.h"
 
+extern char **environ;
+
 /**
  * _execve - execite fork
  * @s: path
@@ -11,7 +13,6 @@ int _execve(char *s, char **string)
 {
 	pid_t chipid;
 	int x = 0;
-
 	chipid = fork();
 
 	if (chipid == -1)
@@ -22,7 +23,7 @@ int _execve(char *s, char **string)
 
 	if (chipid == 0)
 	{
-		execve(s, string, NULL);
+		execve(s, string, environ);
 		x = 1;
 	}
 
