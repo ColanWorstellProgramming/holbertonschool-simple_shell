@@ -46,6 +46,15 @@ void loop(char **s)
 			amount++;
 		}
 
+		if (gline == -1)
+		{
+			printf("\n");
+			free(buff);
+			free(copy);
+			free(s);
+			exit(1);
+		}
+
 		if (gline != -1)
 		{
 			string = malloc(sizeof(char *) * (amount));
