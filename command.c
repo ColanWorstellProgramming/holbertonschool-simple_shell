@@ -85,10 +85,12 @@ char *whichc(char **string, char **s, int num)
 		if (_strchr(string[i], '/', x + 1) == -1) 
 		{
 			printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+			return (r);
 		}
-		comb2 = _strdup(string[i]);
 		x++;
 	}
+
+	comb2 = _strdup(string[i]);
 
 	for (i = 0; s[i] != NULL; i++)
 	{
