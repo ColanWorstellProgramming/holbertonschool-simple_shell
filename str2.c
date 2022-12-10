@@ -49,22 +49,16 @@ char *str_concat(char *s1, char *s2)
  * Return: - | ends the file
  */
 
-int _strchr(char *s, char c)
+int _strchr(char *s, char c, int i)
 {
 
-	int i = 0;
-
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			return (i);
-		}
-		i++;
-	}
-
 	if (s[i] == c)
-		return (i);
-
-	return (-1);
+	{
+		return (1);
+	}
+	if (s[i] == '\0')
+	{
+		return (-1);
+	}
+	return (-2);
 }

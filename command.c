@@ -78,18 +78,18 @@ char *whichc(char **string, char **s, int num)
 	char *r = NULL;
 	char *comb = NULL;
 	char *comb2 = NULL;
+	int x = 0;
 
-	if (_strcmp(string[i], "/") == 0)
+	while (_strchr(string[i], '/', x) == 1)
 	{
-		printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
-		return (r);
-	}
-
-	if (_strchr(string[i], '/') == 0)
-	{
+		if (_strchr(string[i], '/', x + 1) == -1) 
+		{
+			printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+		}
 		comb2 = _strdup(string[i]);
+		x++;
 	}
-	
+
 	for (i = 0; s[i] != NULL; i++)
 	{
 
