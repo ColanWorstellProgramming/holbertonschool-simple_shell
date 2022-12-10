@@ -36,7 +36,11 @@ int command(char **string, char **s, int num)
 	else
 	{
 		r = whichc(string, s, num);
+		
+		if (r != NULL)
+		{
 		x = _execve(r, string);
+		}
 		free(r);
 		r = NULL;
 	}
@@ -90,16 +94,16 @@ char *whichc(char **string, char **s, int num)
 	for (i = 0; s[i] != NULL; i++)
 	{
 
-		if (comb2 == NULL)
-		{
-			comb = str_concat(s[i], "/");
+/*		if (comb2 == NULL)
+*		{
+*/			comb = str_concat(s[i], "/");
 			comb2 = str_concat(comb, string[0]);
 
 			free(comb);
 			comb = NULL;
-		}
-
-		if (access(comb2, F_OK) == 0)
+/*		}
+*
+*/		if (access(comb2, F_OK) == 0)
 		{
 			r = _strdup(comb2);
 			free(comb2);
