@@ -26,9 +26,9 @@ int command(char **string, char **s)
 	{
 
 		r = whichc(string, s);
-/**
- * 		_execve(r, string);
- */
+
+		_execve(r, string);
+
 		free(r);
 		r = NULL;
 	}
@@ -85,18 +85,15 @@ char *whichc(char **string, char **s)
 		}
 		else
 		{
-			printf("File Does Not Exist Within %s\n", s[i]);
-	
 			free(comb2);
 			comb2 = NULL;
-
 		}
 
 	}
 
 	if (r == NULL)
 	{
-		printf("File Not Found\n");
+		printf("File Not Found Within Path\n");
 		return (r);
 	}
 	
