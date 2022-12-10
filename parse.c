@@ -28,7 +28,7 @@ char **parse(char *s)
 			string = malloc(sizeof(char *) * (amount));
 			if (string == NULL)
 			{
-				exit(1);
+				exit(errno);
 			}
 
 			for (two = strtok(s, del); two != NULL; two = strtok(NULL, del))

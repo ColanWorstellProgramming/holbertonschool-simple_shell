@@ -16,5 +16,5 @@ int main()
 
 	loop(s);
 
-	return (1);
+	return (errno);
 }

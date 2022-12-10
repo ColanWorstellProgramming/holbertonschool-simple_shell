@@ -52,10 +52,14 @@ void loop(char **s)
 
 		if (gline == -1)
 		{
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+			}
 			free(buff);
 			free(copy);
 			free(s);
-			exit(1);
+			exit(errno);
 		}
 
 		if (gline != -1)
@@ -64,7 +68,7 @@ void loop(char **s)
 			if (string == NULL)
 			{
 				free(buff);
-				exit(1);
+				exit(errno);
 			}
 
 			for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
@@ -74,6 +78,8 @@ void loop(char **s)
 			}
 
 		}
+
+		string[i] = NULL;
 
 		j = command(string, s, num);
 		num++;
@@ -86,7 +92,7 @@ void loop(char **s)
 		{
 			free(s);
 			s = NULL;
-			exit(j);
+			exit(errno);
 		}
 	}
 }

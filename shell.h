@@ -12,6 +12,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <errno.h>
 
 /**
  * Global var
