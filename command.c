@@ -36,11 +36,7 @@ int command(char **string, char **s, int num)
 	else
 	{
 		r = whichc(string, s, num);
-
-		if (r != NULL)
-		{
-			x = _execve(r, string);
-		}
+		x = _execve(r, string);
 		free(r);
 		r = NULL;
 	}
