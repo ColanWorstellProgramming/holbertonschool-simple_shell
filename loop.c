@@ -63,9 +63,7 @@ void loop(char ** s)
 
 		}
 
-/*		string[i] = '\0';
-*
-*/		j = command(string, s, num);
+		j = command(string, s, num);
 		num++;
 
 		free(string);
