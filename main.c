@@ -7,7 +7,7 @@
  *
  * Return: int value
  */
-int main(int ac, char *av[])
+int main()
 {
 
 	char **s = NULL;
@@ -16,7 +16,5 @@ int main(int ac, char *av[])
 
 	loop(s);
 
-	(void) ac;
-	(void) av;
 	return (1);
 }
