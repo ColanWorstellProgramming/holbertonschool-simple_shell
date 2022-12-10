@@ -29,7 +29,8 @@ int command(char **string, char **s)
 /**
  * 		_execve(r, string);
  */
-		 printf("Location : %s\n", r);
+		free(r);
+		r = NULL;
 	}
 
 	return (0);
@@ -61,7 +62,7 @@ char **spath()
 
 char *whichc(char **string, char **s)
 {
-	int i;
+	int i = 0;
 	char *r = NULL;
 	char *comb = NULL;
 	char *comb2 = NULL;

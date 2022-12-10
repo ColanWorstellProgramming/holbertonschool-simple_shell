@@ -15,7 +15,7 @@ void loop(char ** s)
 	char *buff;
 	char *two = NULL;
 	char *copy = NULL;
-	char **string;
+	char **string = NULL;
 	char *arg = NULL;
 
 	const char *del = " \t\n";
