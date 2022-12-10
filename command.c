@@ -36,8 +36,11 @@ int command(char **string, char **s, int num)
 	else
 	{
 		r = whichc(string, s, num);
-		x = _execve(r, string);
 
+		if (r != NULL)
+		{
+			x = _execve(r, string);
+		}
 		free(r);
 		r = NULL;
 	}
@@ -79,6 +82,12 @@ char *whichc(char **string, char **s, int num)
 	if (_strcmp(string[i], "/") == 0)
 	{
 		printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+		return (r);
+	}
+
+	if (_strchr(string[i], '/') == 0)
+	{
+		comb2 = _strdup(string[i]);
 	}
 	
 	for (i = 0; s[i] != NULL; i++)

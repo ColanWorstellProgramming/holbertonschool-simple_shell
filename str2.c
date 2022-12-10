@@ -41,3 +41,30 @@ char *str_concat(char *s1, char *s2)
 
 	return (y);
 }
+
+/**
+ * _strchr - | starts the file
+ * @s: - | var
+ * @c: - | var
+ * Return: - | ends the file
+ */
+
+int _strchr(char *s, char c)
+{
+
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			return (i);
+		}
+		i++;
+	}
+
+	if (s[i] == c)
+		return (i);
+
+	return (-1);
+}

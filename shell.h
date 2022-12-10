@@ -32,6 +32,7 @@ char *_strdup(char *str);
 int _strlen(char *s);
 char *_strstr(char *haystack, char *needle);
 char *str_concat(char *s1, char *s2);
+int _strchr(char *s, char c);
 
 char *getpath();
 char **spath();
