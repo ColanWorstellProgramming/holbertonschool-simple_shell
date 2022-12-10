@@ -1,13 +1,35 @@
 #include "shell.h"
+
 /**
- * main - 
- *
- * Return: -1
+ * _execve - execite fork
+ * @s: path
+ * @string: user input
+ * Return: - pass or fail var
  */
+
 int _execve(char *s, char **string)
 {
-	execve(s, string, NULL);
+	pid_t chipid;
+	int x = 0;
 
-	printf("Error \n");
-	return -1;
+	chipid = fork();
+
+	if (chipid == -1)
+	{
+		perror("Fork Error'd While Initializin\n");
+		x = 1;
+	}
+
+	if (chipid == 0)
+	{
+		x = execve(s, string, NULL);
+		exit(x);
+	}
+
+	else
+	{
+		wait(NULL);
+	}
+
+	return(x);
 }

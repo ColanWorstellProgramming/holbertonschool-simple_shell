@@ -22,7 +22,7 @@ void loop(char ** s)
 
 	while (1)
 	{
-		
+
 		printf("$ ");
 
 		buff = NULL;
@@ -58,7 +58,7 @@ void loop(char ** s)
 				string[i] = two;
 				i++;
 			}
-			
+
 		}
 
 		j = command(string, s);

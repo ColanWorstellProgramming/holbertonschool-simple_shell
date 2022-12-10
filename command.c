@@ -8,32 +8,32 @@
 
 int command(char **string, char **s)
 {
-
+	int x = 0;
 	char *r = NULL;
 
 	if (_strcmp(string[0], "exit") == 0)
 	{
 		fflush(stdout);
-		return (1);
+		x = 1;
+		return (x);
 	}
 
-	if (_strcmp(string[0], "env") == 0)
+	else if (_strcmp(string[0], "env") == 0)
 	{
-
+		x = 0;
+		return (x);
 	}
 
 	else
 	{
-
 		r = whichc(string, s);
-
-		_execve(r, string);
+		x = _execve(r, string);
 
 		free(r);
 		r = NULL;
 	}
 
-	return (0);
+	return (x);
 }
 
 /**

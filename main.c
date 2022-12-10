@@ -13,7 +13,7 @@ int main(int ac, char *av[])
 	char **s = NULL;
 
 	s = spath();
-	
+
 	loop(s);
 
 	(void) ac;
