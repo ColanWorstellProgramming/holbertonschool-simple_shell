@@ -30,6 +30,10 @@ void loop(char **s)
 			printf("$ ");
 		}
 
+		arg = NULL;
+		string = NULL;
+		two = NULL;
+		copy = NULL;
 		buff = NULL;
 		j = 0;
 		size = 1;
