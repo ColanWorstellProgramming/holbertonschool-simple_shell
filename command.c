@@ -70,20 +70,28 @@ char **spath()
  */
 
 char *whichc(char **string, char **s, int num)
-{
+{	
 	int i = 0;
 	char *r = NULL;
 	char *comb = NULL;
 	char *comb2 = NULL;
 
+	if (_strcmp(string[i], "/") == 0)
+	{
+		printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+	}
+	
 	for (i = 0; s[i] != NULL; i++)
 	{
 
-		comb = str_concat(s[i], "/");
-		comb2 = str_concat(comb, string[0]);
-		
-		free(comb);
-		comb = NULL;
+		if (comb2 == NULL)
+		{
+			comb = str_concat(s[i], "/");
+			comb2 = str_concat(comb, string[0]);
+
+			free(comb);
+			comb = NULL;
+		}
 
 		if (access(comb2, F_OK) == 0)
 		{
@@ -99,6 +107,7 @@ char *whichc(char **string, char **s, int num)
 		}
 
 	}
+
 
 	if (r == NULL)
 	{
