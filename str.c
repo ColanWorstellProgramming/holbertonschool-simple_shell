@@ -81,8 +81,8 @@ int _strlen(char *s)
 
 char *getpath()
 {
-	int i;
-	char *path;
+	int i = 0;
+	char *path = NULL;
 	char *fpath = NULL;
 
 	for (i = 0; environ[i] != NULL; i++)

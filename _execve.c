@@ -23,8 +23,11 @@ int _execve(char *s, char **string)
 
 	if (chipid == 0)
 	{
-		execve(s, string, environ);
-		x = 1;
+		if (s != NULL && string != NULL)
+		{
+			execve(s, string, environ);
+			x = 1;
+		}
 	}
 
 	else

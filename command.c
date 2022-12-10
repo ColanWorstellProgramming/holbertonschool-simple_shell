@@ -14,6 +14,11 @@ int command(char **string, char **s, int num)
 	int x = 0;
 	char *r = NULL;
 
+	if (_strcmp(string[0], "\04") == 0)
+	{
+	printf("eof\n");
+	}
+
 	if (_strcmp(string[0], "exit") == 0)
 	{
 		fflush(stdout);
