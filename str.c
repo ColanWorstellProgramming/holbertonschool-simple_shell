@@ -1,6 +1,6 @@
 #include "shell.h"
 
-extern char **environ; 
+extern char **environ;
 
 /**
  * _strcmp - | starts the file
@@ -81,21 +81,20 @@ int _strlen(char *s)
 
 char *getpath()
 {
-
 	int i;
 	char *path;
 	char *fpath = NULL;
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-	
+
 		path = _strstr(environ[i], "PATH=");
 
 		if (path != NULL)
 		{
 			path = path + 5;
 			fpath = path;
-		}	
+		}
 
 	}
 

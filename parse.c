@@ -15,7 +15,7 @@ char **parse(char *s)
 	char *arg = NULL;
 
 	const char *del = ":";
-		
+
 		i = 0;
 
 		copy = _strdup(s);
@@ -36,7 +36,7 @@ char **parse(char *s)
 				string[i] = two;
 				i++;
 			}
-			
+
 			two = NULL;
 			free(copy);
 

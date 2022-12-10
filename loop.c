@@ -5,7 +5,7 @@
  *
  * Return:
  */
-void loop(char ** s)
+void loop(char **s)
 {
 	int i;
 	int amount;
