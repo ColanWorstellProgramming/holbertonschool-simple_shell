@@ -22,8 +22,8 @@ int _execve(char *s, char **string)
 
 	if (chipid == 0)
 	{
-		x = execve(s, string, NULL);
-		exit(x);
+		execve(s, string, NULL);
+		x = 1;
 	}
 
 	else
