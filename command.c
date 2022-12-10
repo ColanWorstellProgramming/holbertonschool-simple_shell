@@ -1,13 +1,16 @@
 #include "shell.h"
 
+extern char **environ;
+
 /**
  * command - parses commands
  * @string: char
  * Return: void
  */
 
-int command(char **string, char **s)
+int command(char **string, char **s, int num)
 {
+	int i = 0;
 	int x = 0;
 	char *r = NULL;
 
@@ -20,13 +23,19 @@ int command(char **string, char **s)
 
 	else if (_strcmp(string[0], "env") == 0)
 	{
+
+		for (i = 0; environ[i] != NULL; i++)
+		{
+			printf("%s\n", environ[i]);
+		}
+
 		x = 0;
 		return (x);
 	}
 
 	else
 	{
-		r = whichc(string, s);
+		r = whichc(string, s, num);
 		x = _execve(r, string);
 
 		free(r);
@@ -60,7 +69,7 @@ char **spath()
  * Return: where command is
  */
 
-char *whichc(char **string, char **s)
+char *whichc(char **string, char **s, int num)
 {
 	int i = 0;
 	char *r = NULL;
@@ -93,7 +102,7 @@ char *whichc(char **string, char **s)
 
 	if (r == NULL)
 	{
-		printf("File Not Found Within Path\n");
+		printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		return (r);
 	}
 	

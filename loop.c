@@ -20,6 +20,8 @@ void loop(char ** s)
 
 	const char *del = " \t\n";
 
+	int num = 1;
+
 	while (1)
 	{
 
@@ -61,7 +63,9 @@ void loop(char ** s)
 
 		}
 
-		j = command(string, s);
+		j = command(string, s, num);
+		num++;
+
 		free(string);
 		free(buff);
 		free(copy);

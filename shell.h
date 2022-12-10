@@ -24,7 +24,7 @@ extern char **environ;
  */
 
 void loop(char **s);
-int command(char **string, char **s);
+int command(char **string, char **s, int num);
 int _execve(char *s, char **string);
 
 int _strcmp(char *s1, char *s2);
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2);
 char *getpath();
 char **spath();
 char **parse(char *s);
-char *whichc(char **string, char **s);
+char *whichc(char **string, char **s, int num);
 
 int probandofork(void);
 int _fork(void);
