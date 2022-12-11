@@ -63,7 +63,7 @@ char *_strdup(char *str)
 int _strlen(char *s)
 {
 	int len = 0;
-
+	
 	while (*s)
 	{
 		s++;
@@ -122,15 +122,16 @@ char *_strstr(char *haystack, char *needle)
 		while (needle[y] && haystack[x] == needle[0])
 		{
 
-		if (haystack[x + y] == needle[y])
-		{
-			y++;
+			if (haystack[x + y] == needle[y])
+			{
+				y++;
+			}
+			else
+			{
+				break;
+			}
 		}
-		else
-		{
-			break;
-		}
-		}
+		
 		if (needle[y])
 		{
 			x++;
@@ -141,5 +142,5 @@ char *_strstr(char *haystack, char *needle)
 			return (haystack + x);
 		}
 	}
-return (0);
+	return (0);
 }

@@ -9,7 +9,6 @@
  */
 int main()
 {
-
 	char **s = NULL;
 
 	s = spath();

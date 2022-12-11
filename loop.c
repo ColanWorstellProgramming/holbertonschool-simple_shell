@@ -43,17 +43,6 @@ void loop(char **s)
 
 		gline = getline(&buff, &size, stdin);
 
-		copy = _strdup(buff);
-
-		if (_strcmp(buff, "\n") == 0)
-		{
-			continue;
-		}
-		for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
-		{
-			amount++;
-		}
-
 		if (gline == -1)
 		{
 			if (isatty(STDIN_FILENO))
@@ -65,6 +54,18 @@ void loop(char **s)
 			free(s);
 			exit(errno);
 		}
+
+		copy = _strdup(buff);
+
+		if (_strcmp(buff, "\n") == 0)
+		{
+			continue;
+		}
+		for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
+		{
+			amount++;
+		}
+
 
 		if (gline != -1)
 		{
@@ -84,6 +85,18 @@ void loop(char **s)
 		}
 
 		string[i] = NULL;
+
+		if (gline == -1)
+		{
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+			}
+			free(buff);
+			free(copy);
+			free(s);
+			exit(errno);
+		}
 
 		j = command(string, s, num);
 		num++;
