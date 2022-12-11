@@ -94,6 +94,7 @@ char *getpath()
 		{
 			path = path + 5;
 			fpath = path;
+			break;
 		}
 
 	}

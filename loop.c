@@ -87,9 +87,8 @@ void loop(char **s)
 
 		j = command(string, s, num);
 		num++;
-
-		free(string);
 		free(buff);
+		free(string);
 		free(copy);
 
 		if (j == 1)
