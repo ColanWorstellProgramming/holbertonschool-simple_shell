@@ -82,13 +82,30 @@ int _strlen(char *s)
 char *getpath()
 {
 	int i = 0;
+	int x = 0;
+	int flag = 0;
 	char *path = NULL;
 	char *fpath = NULL;
+	char *place = "PATH=";
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
+		for (x = 0; x < 5; x++)
+		{
+			if ((_strchr(environ[i], place[x], x) == 1))
+			{
+				flag = flag + 1;
 
-		path = _strstr(environ[i], "PATH=");
+				if (flag == 5)
+				{
+					path = environ[i];
+				}
+			}
+			else
+			{
+				break;
+			}
+		}
 
 		if (path != NULL)
 		{
