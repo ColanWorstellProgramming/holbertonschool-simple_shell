@@ -52,7 +52,7 @@ void loop(char **s)
 			free(buff);
 			free(copy);
 			free(s);
-			exit(errno);
+			exit(0);
 		}
 
 		copy = _strdup(buff);
