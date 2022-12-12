@@ -15,5 +15,5 @@ int main()
 
 	loop(s);
 
-	return (errno);
+	return (exit_status);
 }
