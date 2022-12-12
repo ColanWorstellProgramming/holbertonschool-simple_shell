@@ -4,7 +4,9 @@ extern char **environ;
 
 /**
  * command - parses commands
- * @string: char
+ * @string: user input
+ * @s: path
+ * @num: command sent count
  * Return: void
  */
 
@@ -36,7 +38,7 @@ int command(char **string, char **s, int num)
 	else
 	{
 		r = whichc(string, s, num);
-		
+
 		if (r != NULL)
 		{
 		x = _execve(r, string);
@@ -58,7 +60,7 @@ char **spath()
 {
 	char **string = NULL;
 	char *path = NULL;
-	
+
 	path = getpath();
 
 	string = parse(path);
@@ -68,12 +70,14 @@ char **spath()
 
 /**
  * whichc - finds where a command is
- * 
+ * @string: user input
+ * @s: path
+ * @num: command sent num
  * Return: where command is
  */
 
 char *whichc(char **string, char **s, int num)
-{	
+{
 	int i = 0;
 	char *r = NULL;
 	char *comb = NULL;
@@ -82,7 +86,7 @@ char *whichc(char **string, char **s, int num)
 
 	while (_strchr(string[i], '/', x) == 1)
 	{
-		if (_strchr(string[i], '/', x + 1) == -1) 
+		if (_strchr(string[i], '/', x + 1) == -1)
 		{
 			printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
 		}
@@ -124,6 +128,6 @@ char *whichc(char **string, char **s, int num)
 		printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		return (r);
 	}
-	
+
 	return (r);
 }
