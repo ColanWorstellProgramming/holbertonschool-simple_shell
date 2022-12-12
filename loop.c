@@ -27,7 +27,7 @@ void loop(char **s)
 
 		if (isatty(STDIN_FILENO))
 		{
-			printf("$ ");
+			_printf("$ ");
 		}
 
 		arg = NULL;
@@ -47,12 +47,13 @@ void loop(char **s)
 		{
 			if (isatty(STDIN_FILENO))
 			{
-				printf("\n");
+				_printf("\n");
 			}
+
 			free(buff);
 			free(copy);
 			free(s);
-			exit(errno);
+			exit(exit_status);
 		}
 
 		copy = _strdup(buff);
@@ -90,12 +91,12 @@ void loop(char **s)
 		{
 			if (isatty(STDIN_FILENO))
 			{
-				printf("\n");
+				_printf("\n");
 			}
 			free(buff);
 			free(copy);
 			free(s);
-			exit(errno);
+			exit(exit_status);
 		}
 
 		j = command(string, s, num);
