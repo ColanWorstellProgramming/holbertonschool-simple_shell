@@ -36,6 +36,10 @@ int _execve(char *s, char **string)
 	{
 		exit_status = WEXITSTATUS(status);
 	}
+	if (chipid != 0)
+	{
+		fflush(NULL);
+	}
 
 	return(0);
 }

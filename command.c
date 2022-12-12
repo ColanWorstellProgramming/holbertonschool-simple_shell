@@ -29,7 +29,7 @@ int command(char **string, char **s, int num)
 		{
 			printf("%s\n", environ[i]);
 		}
-
+		fflush(stdout);
 		x = 0;
 	}
 
