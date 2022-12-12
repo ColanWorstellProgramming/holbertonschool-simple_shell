@@ -27,7 +27,7 @@ int command(char **string, char **s, int num)
 
 		for (i = 0; environ[i] != NULL; i++)
 		{
-			printf("%s\n", environ[i]);
+			_printf("%s\n", environ[i]);
 		}
 		fflush(stdout);
 		x = 0;
