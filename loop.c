@@ -27,7 +27,7 @@ void loop(char **s)
 
 		if (isatty(STDIN_FILENO))
 		{
-			printf("$ ");
+			_printf("$ ");
 		}
 
 		arg = NULL;
@@ -47,7 +47,7 @@ void loop(char **s)
 		{
 			if (isatty(STDIN_FILENO))
 			{
-				printf("\n");
+				_printf("\n");
 			}
 
 			free(buff);
@@ -91,7 +91,7 @@ void loop(char **s)
 		{
 			if (isatty(STDIN_FILENO))
 			{
-				printf("\n");
+				_printf("\n");
 			}
 			free(buff);
 			free(copy);
