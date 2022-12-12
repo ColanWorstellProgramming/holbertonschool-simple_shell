@@ -18,6 +18,8 @@
  * Global var
  */
 
+int exit_status;
+
 extern char **environ;
 
 /**

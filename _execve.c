@@ -13,16 +13,12 @@ int _execve(char *s, char **string)
 {
 	pid_t chipid;
 	int status;
-	int x = 0;
-	
+
 	chipid = fork();
 
 	if (chipid == -1)
 	{
 		perror("Fork Error'd While Initializin\n");
-/*		x = 1;
-*
-*/
 	}
 	else if (chipid >  0)
 	{
@@ -33,16 +29,13 @@ int _execve(char *s, char **string)
 		if (s != NULL && string != NULL)
 		{
 			execve(s, string, environ);
-/*			x = 1;
-*
-*/
 		}
 	}
 
 	if (WIFEXITED(status))
 	{
-		x = WEXITSTATUS(status);
+		exit_status = WEXITSTATUS(status);
 	}
 
-	return(x);
+	return(0);
 }

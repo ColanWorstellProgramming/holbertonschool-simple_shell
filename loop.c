@@ -108,7 +108,7 @@ void loop(char **s)
 		{
 			free(s);
 			s = NULL;
-			exit(errno);
+			exit(exit_status);
 		}
 	}
 }

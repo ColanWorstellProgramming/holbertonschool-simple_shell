@@ -20,7 +20,6 @@ int command(char **string, char **s, int num)
 	{
 		fflush(stdout);
 		x = 1;
-		return (x);
 	}
 
 	else if (_strcmp(string[0], "env") == 0)
@@ -32,7 +31,6 @@ int command(char **string, char **s, int num)
 		}
 
 		x = 0;
-		return (x);
 	}
 
 	else
@@ -89,6 +87,7 @@ char *whichc(char **string, char **s, int num)
 		if (_strchr(string[i], '/', x + 1) == -1)
 		{
 			printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+			return (r);
 		}
 		x++;
 	}
