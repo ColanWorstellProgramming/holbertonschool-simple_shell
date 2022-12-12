@@ -49,6 +49,7 @@ void loop(char **s)
 			{
 				printf("\n");
 			}
+
 			free(buff);
 			free(copy);
 			free(s);
@@ -95,7 +96,7 @@ void loop(char **s)
 			free(buff);
 			free(copy);
 			free(s);
-			exit(errno);
+			exit(exit_status);
 		}
 
 		j = command(string, s, num);
