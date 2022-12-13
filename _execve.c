@@ -16,7 +16,6 @@ int _execve(char *s, char **string)
 
 	if (chipid == -1)
 	{
-		perror("Fork Error'd While Initializin\n");
 	}
 	else if (chipid >  0)
 	{
