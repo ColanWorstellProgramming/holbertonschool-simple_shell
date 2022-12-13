@@ -62,6 +62,8 @@ void loop(char **s)
 
 		if (_strcmp(buff, "\n") == 0)
 		{
+			free(buff);
+			buff = NULL;
 			continue;
 		}
 		while (_strchr(buff, ' ', x) == 1)
@@ -76,6 +78,8 @@ void loop(char **s)
 		{
 			free(buff);
 			buff = NULL;
+			free(copy);
+			copy = NULL;
 			continue;
 		}
 

@@ -92,6 +92,21 @@ char *whichc(char **string, char **s, int num)
 
 	comb2 = _strdup(string[i]);
 
+	r = ret(r, comb, comb2, s, string);
+
+	if (r == NULL)
+	{
+		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		exit_status = 127;
+		return (r);
+	}
+	return (r);
+}
+
+char *ret(char *r, char *comb, char *comb2, char **s, char **string)
+{
+	int i = 0;
+
 	for (i = 0; s[i] != NULL; i++)
 	{
 
@@ -116,16 +131,6 @@ char *whichc(char **string, char **s, int num)
 			free(comb2);
 			comb2 = NULL;
 		}
-
 	}
-
-
-	if (r == NULL)
-	{
-		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
-		exit_status = 127;
-		return (r);
-	}
-
 	return (r);
 }
