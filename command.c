@@ -26,6 +26,7 @@ int command(char **string, char **s, int num)
 		for (i = 0; environ[i] != NULL; i++)
 		{
 			_printf("%s\n", environ[i]);
+			exit_status = 0;
 		}
 		x = 0;
 	}
