@@ -4,7 +4,7 @@
 
 ## General Content
 
-* fhlkhfalfhalshfahat is the Shell?
+* hlkhfalfhalshfahat is the Shell?
 * How Do I compile it?
 * Essential Functionalities of the Simple Shell
 * List of useful commands
