@@ -22,10 +22,16 @@ int command(char **string, char **s, int num)
 
 	else if (_strcmp(string[0], "env") == 0)
 	{
+
+		if (environ[i] == NULL)
+		{
+		i++;
+
 		for (i = 0; environ[i] != NULL; i++)
 		{
 			_printf("%s\n", environ[i]);
 			exit_status = 0;
+		}
 		}
 		x = 0;
 	}
