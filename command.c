@@ -84,7 +84,7 @@ char *whichc(char **string, char **s, int num)
 	{
 		if (_strchr(string[i], '/', x + 1) == -1)
 		{
-			_printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+			fprintf(stderr, "%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
 			exit_status = 126;
 			return (r);
 		}
@@ -97,7 +97,7 @@ char *whichc(char **string, char **s, int num)
 
 	if (r == NULL)
 	{
-		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		fprintf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		exit_status = 127;
 		return (r);
 	}
