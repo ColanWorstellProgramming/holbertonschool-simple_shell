@@ -4,6 +4,7 @@
 
 ## General Content
 
+
 * What is the Shell?
 * How Do I compile it?
 * Essential Functionalities of the Simple Shell
