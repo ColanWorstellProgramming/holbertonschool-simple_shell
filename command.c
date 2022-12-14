@@ -22,14 +22,10 @@ int command(char **string, char **s, int num)
 
 	else if (_strcmp(string[0], "env") == 0)
 	{
-
 		for (i = 0; environ[i] != NULL; i++)
 		{
-			if (environ[i])
-			{
-				_printf("%s\n", environ[i]);
-				exit_status = 0;
-			}
+			_printf("%s\n", environ[i]);
+			exit_status = 0;
 		}
 		x = 0;
 	}
@@ -64,6 +60,7 @@ char **spath()
 
 	string = parse(path);
 
+	free(path);
 	return (string);
 }
 
@@ -79,7 +76,6 @@ char *whichc(char **string, char **s, int num)
 {
 	int i = 0;
 	char *r = NULL;
-	char *comb = NULL;
 	char *comb2 = NULL;
 	int x = 0;
 
@@ -96,7 +92,7 @@ char *whichc(char **string, char **s, int num)
 
 	comb2 = _strdup(string[i]);
 
-	r = ret(r, comb, comb2, s, string);
+	r = ret(r, comb2, s, string);
 
 	if (r == NULL)
 	{
@@ -107,9 +103,10 @@ char *whichc(char **string, char **s, int num)
 	return (r);
 }
 
-char *ret(char *r, char *comb, char *comb2, char **s, char **string)
+char *ret(char *r, char *comb2, char **s, char **string)
 {
 	int i = 0;
+	char *comb = NULL;
 
 	for (i = 0; s[i] != NULL; i++)
 	{

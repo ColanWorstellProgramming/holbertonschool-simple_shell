@@ -41,7 +41,9 @@ char **parse(char *s)
 
 			two = NULL;
 			free(copy);
+			copy = NULL;
 			free(copy2);
+			copy2 = NULL;
 			
 		return (string);
 }
