@@ -29,7 +29,7 @@ extern char **environ;
 void loop(char **s);
 int command(char **string, char **s, int num);
 int _execve(char *s, char **string);
-
+char *ret(char * r, char *comb2, char **s, char **string);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 int _strlen(char *s);

@@ -25,13 +25,17 @@ char **parse(char *s)
 			amount++;
 		}
 
+		free(copy);
+		copy = NULL;
+		copy = _strdup(s);
+
 			string = malloc(sizeof(char *) * (amount));
 			if (string == NULL)
 			{
 				exit(errno);
 			}
 
-			for (two = strtok(s, del); two != NULL; two = strtok(NULL, del))
+			for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
 			{
 				string[i] = two;
 				i++;
@@ -39,6 +43,7 @@ char **parse(char *s)
 
 			two = NULL;
 			free(copy);
-
+			copy = NULL;
+			
 		return (string);
 }

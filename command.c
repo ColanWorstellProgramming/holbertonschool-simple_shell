@@ -1,7 +1,5 @@
 #include "shell.h"
 
-extern char **environ;
-
 /**
  * command - parses commands
  * @string: user input
@@ -25,12 +23,24 @@ int command(char **string, char **s, int num)
 	else if (_strcmp(string[0], "env") == 0)
 	{
 
-		for (i = 0; environ[i] != NULL; i++)
+		if (!environ)
+		{
+			x = 0;
+		}
+		else
+		{
+		while (environ[i])
+		{
+		if (environ[i] != NULL)
 		{
 			_printf("%s\n", environ[i]);
+			exit_status = 0;
+			i++;
 		}
-		fflush(stdout);
 		x = 0;
+		}
+		}
+		exit_status = 0;
 	}
 
 	else
@@ -78,7 +88,6 @@ char *whichc(char **string, char **s, int num)
 {
 	int i = 0;
 	char *r = NULL;
-	char *comb = NULL;
 	char *comb2 = NULL;
 	int x = 0;
 
@@ -94,6 +103,22 @@ char *whichc(char **string, char **s, int num)
 	}
 
 	comb2 = _strdup(string[i]);
+
+	r = ret(r, comb2, s, string);
+
+	if (r == NULL)
+	{
+		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		exit_status = 127;
+		return (r);
+	}
+	return (r);
+}
+
+char *ret(char *r, char *comb2, char **s, char **string)
+{
+	int i = 0;
+	char *comb = NULL;
 
 	for (i = 0; s[i] != NULL; i++)
 	{
@@ -119,16 +144,6 @@ char *whichc(char **string, char **s, int num)
 			free(comb2);
 			comb2 = NULL;
 		}
-
 	}
-
-
-	if (r == NULL)
-	{
-		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
-		exit_status = 127;
-		return (r);
-	}
-
 	return (r);
 }

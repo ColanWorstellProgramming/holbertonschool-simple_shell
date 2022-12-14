@@ -7,6 +7,8 @@
  */
 void loop(char **s)
 {
+	int flag;
+	int x;
 	int i;
 	int amount;
 	int gline;
@@ -38,8 +40,10 @@ void loop(char **s)
 		j = 0;
 		size = 1;
 		i = 0;
+		x = 0;
 		amount = 1;
 		gline = -1;
+		flag = 0;
 
 		gline = getline(&buff, &size, stdin);
 
@@ -56,12 +60,31 @@ void loop(char **s)
 			exit(exit_status);
 		}
 
-		copy = _strdup(buff);
-
 		if (_strcmp(buff, "\n") == 0)
 		{
+			free(buff);
+			buff = NULL;
 			continue;
 		}
+		while (_strchr(buff, ' ', x) == 1)
+		{
+			if (_strchr(buff, ' ', x + 1) == -2)
+			{
+				flag = 1;
+			}
+			x++;
+		}
+		if (flag == 1)
+		{
+			free(buff);
+			buff = NULL;
+			free(copy);
+			copy = NULL;
+			continue;
+		}
+
+		copy = _strdup(buff);
+
 		for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
 		{
 			amount++;

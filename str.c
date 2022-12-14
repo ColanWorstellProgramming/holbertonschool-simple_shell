@@ -1,7 +1,5 @@
 #include "shell.h"
 
-extern char **environ;
-
 /**
  * _strcmp - | starts the file
  * @s1: - | var
