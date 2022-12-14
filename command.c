@@ -97,7 +97,7 @@ char *whichc(char **string, char **s, int num)
 
 	if (r == NULL)
 	{
-		fprintf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		fprintf(stderr, "%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		exit_status = 127;
 		return (r);
 	}
