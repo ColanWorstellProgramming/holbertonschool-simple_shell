@@ -2,7 +2,7 @@
 # Simple Shell
 ****
 
-## General Content
+## eneral Content
 
 * What is the Shell?
 * How Do I compile it?
