@@ -25,8 +25,11 @@ int command(char **string, char **s, int num)
 
 		for (i = 0; environ[i] != NULL; i++)
 		{
-			_printf("%s\n", environ[i]);
-			exit_status = 0;
+			if (environ[i])
+			{
+				_printf("%s\n", environ[i]);
+				exit_status = 0;
+			}
 		}
 		x = 0;
 	}
@@ -84,7 +87,7 @@ char *whichc(char **string, char **s, int num)
 	{
 		if (_strchr(string[i], '/', x + 1) == -1)
 		{
-			fprintf(stderr, "%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
+			_printf("%s: %d: %s: Permission denied\n", "./hsh", num, string[0]);
 			exit_status = 126;
 			return (r);
 		}
@@ -97,7 +100,7 @@ char *whichc(char **string, char **s, int num)
 
 	if (r == NULL)
 	{
-		fprintf(stderr, "%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		exit_status = 127;
 		return (r);
 	}
