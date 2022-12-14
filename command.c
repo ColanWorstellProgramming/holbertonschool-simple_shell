@@ -73,7 +73,6 @@ char **spath()
 
 	string = parse(path);
 
-	free(path);
 	return (string);
 }
 
@@ -109,7 +108,7 @@ char *whichc(char **string, char **s, int num)
 
 	if (r == NULL)
 	{
-		printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
+		_printf("%s: %d: %s: not found\n", "./hsh", num, string[0]);
 		exit_status = 127;
 		return (r);
 	}

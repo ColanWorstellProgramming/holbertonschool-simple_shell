@@ -108,7 +108,7 @@ char *getpath()
 		if (path != NULL)
 		{
 			path = path + 5;
-			fpath = _strdup(path);
+			fpath = path;
 			break;
 		}
 
