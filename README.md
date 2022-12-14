@@ -6,7 +6,7 @@
 
 * What is the Shell?
 * How Do I compile it?
-* ssential Functionalities of the Simple Shell
+* Essential Functionalities of the Simple Shell
 * List of useful commands
 * List of allowed functions and system calls for this project
 * Files
