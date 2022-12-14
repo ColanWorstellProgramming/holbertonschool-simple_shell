@@ -11,6 +11,7 @@ char **parse(char *s)
 	int amount = 1;
 	char *two = NULL;
 	char *copy = NULL;
+	char *copy2 = NULL;
 	char **string = NULL;
 	char *arg = NULL;
 
@@ -19,6 +20,7 @@ char **parse(char *s)
 		i = 0;
 
 		copy = _strdup(s);
+		copy2 = _strdup(s);
 
 		for (arg = strtok(copy, del); arg != NULL; arg = strtok(NULL, del))
 		{
@@ -27,7 +29,6 @@ char **parse(char *s)
 
 		free(copy);
 		copy = NULL;
-		copy = _strdup(s);
 
 			string = malloc(sizeof(char *) * (amount));
 			if (string == NULL)
@@ -35,15 +36,17 @@ char **parse(char *s)
 				exit(errno);
 			}
 
-			for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
+			for (two = strtok(copy2, del); two != NULL; two = strtok(NULL, del))
 			{
-				string[i] = two;
+				string[i] = _strdup(two);
 				i++;
 			}
 
+			string[i] = NULL;
+
 			two = NULL;
-			free(copy);
-			copy = NULL;
+			free(copy2);
+			copy2 = NULL;
 			
 		return (string);
 }

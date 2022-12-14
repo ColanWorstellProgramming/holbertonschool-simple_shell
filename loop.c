@@ -53,7 +53,7 @@ void loop(char **s)
 			{
 				_printf("\n");
 			}
-
+			freemem(s);
 			free(buff);
 			free(copy);
 			free(s);
@@ -116,6 +116,7 @@ void loop(char **s)
 			{
 				_printf("\n");
 			}
+			freemem(s);
 			free(buff);
 			free(copy);
 			free(s);
@@ -130,6 +131,7 @@ void loop(char **s)
 
 		if (j == 1)
 		{
+			freemem(s);
 			free(s);
 			s = NULL;
 			exit(exit_status);

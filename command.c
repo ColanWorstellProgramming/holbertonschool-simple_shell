@@ -145,5 +145,6 @@ char *ret(char *r, char *comb2, char **s, char **string)
 			comb2 = NULL;
 		}
 	}
+
 	return (r);
 }

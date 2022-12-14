@@ -36,6 +36,7 @@ int _strlen(char *s);
 char *_strstr(char *haystack, char *needle);
 char *str_concat(char *s1, char *s2);
 int _strchr(char *s, char c, int i);
+void freemem(char **s);
 
 char *getpath();
 char **spath();
