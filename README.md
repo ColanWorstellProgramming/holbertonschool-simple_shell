@@ -5,7 +5,7 @@
 ## General Content
 
 * What is the Shell?
-* How Do I compile it?
+* `:xow Do I compile it?
 * Essential Functionalities of the Simple Shell
 * List of useful commands
 * List of allowed functions and system calls for this project
