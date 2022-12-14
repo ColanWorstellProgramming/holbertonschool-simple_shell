@@ -40,6 +40,7 @@ int command(char **string, char **s, int num)
 		x = 0;
 		}
 		}
+		exit_status = 0;
 	}
 
 	else
