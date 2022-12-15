@@ -7,33 +7,25 @@
  */
 void loop(char **s)
 {
-	int flag;
-	int x;
-	int gline;
+	int flag, x, gline;
 	size_t size;
-	char *buff;
+	char *buff, *copy = NULL;
 	char **string = NULL;
-	char *copy = NULL;
 
 	while (1)
 	{
-
 		if (isatty(STDIN_FILENO))
 		{
 			_printf("$ ");
 		}
-
 		string = NULL;
 		buff = NULL;
 		size = 1;
 		x = 0;
 		gline = -1;
 		flag = 0;
-
 		gline = getline(&buff, &size, stdin);
-
 		loop2(gline, s, buff, copy);
-
 		if (_strcmp(buff, "\n") == 0)
 		{
 			free(buff);
@@ -50,14 +42,9 @@ void loop(char **s)
 		}
 		if (flag == 1)
 		{
-			free(buff);
-			buff = NULL;
-			free(copy);
-			copy = NULL;
+			flagcheck(buff, copy);
 			continue;
 		}
-
 		loop3(s, gline, buff, string, copy);
-
 	}
 }
