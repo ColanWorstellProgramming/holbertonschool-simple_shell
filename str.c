@@ -61,7 +61,7 @@ char *_strdup(char *str)
 int _strlen(char *s)
 {
 	int len = 0;
-	
+
 	while (*s)
 	{
 		s++;
@@ -73,7 +73,7 @@ int _strlen(char *s)
 
 /**
  * getpath - | gets path string
- * 
+ *
  * Return: char *
  */
 
@@ -146,7 +146,7 @@ char *_strstr(char *haystack, char *needle)
 				break;
 			}
 		}
-		
+
 		if (needle[y])
 		{
 			x++;

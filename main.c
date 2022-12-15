@@ -2,15 +2,14 @@
 
 /**
  * main - first function to be called
- * @ac: - arg count
- * @av: - args
  *
  * Return: int value
  */
-int main()
+int main(void)
 {
 	char **s = NULL;
 	int i = 0;
+
 	s = spath();
 
 	loop(s);

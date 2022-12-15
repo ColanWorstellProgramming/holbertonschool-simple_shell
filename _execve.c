@@ -38,5 +38,5 @@ int _execve(char *s, char **string)
 		fflush(NULL);
 	}
 
-	return(0);
+	return (0);
 }

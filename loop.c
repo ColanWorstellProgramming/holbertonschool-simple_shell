@@ -2,7 +2,7 @@
 
 /**
  * loop - inf loop for shell
- *
+ * @s: path
  * Return:
  */
 void loop(char **s)

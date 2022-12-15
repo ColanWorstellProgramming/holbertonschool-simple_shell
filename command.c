@@ -10,8 +10,7 @@
 
 int command(char **string, char **s, int num)
 {
-	int i = 0;
-	int x = 0;
+	int i = 0, x = 0;
 	char *r = NULL;
 
 	if (_strcmp(string[0], "exit") == 0)
@@ -19,10 +18,8 @@ int command(char **string, char **s, int num)
 		fflush(stdout);
 		x = 1;
 	}
-
 	else if (_strcmp(string[0], "env") == 0)
 	{
-
 		if (!environ)
 		{
 			x = 0;
@@ -42,11 +39,9 @@ int command(char **string, char **s, int num)
 		}
 		exit_status = 0;
 	}
-
 	else
 	{
 		r = whichc(string, s, num);
-
 		if (r != NULL)
 		{
 		x = _execve(r, string);
@@ -54,7 +49,6 @@ int command(char **string, char **s, int num)
 		free(r);
 		r = NULL;
 	}
-
 	return (x);
 }
 
@@ -114,6 +108,15 @@ char *whichc(char **string, char **s, int num)
 	}
 	return (r);
 }
+
+/**
+ * ret - piece of whichc
+ * @r: return val
+ * @comb2: combination string
+ * @s: user input
+ * @string: path
+ * Return: r
+ */
 
 char *ret(char *r, char *comb2, char **s, char **string)
 {

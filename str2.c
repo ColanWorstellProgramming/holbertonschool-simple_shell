@@ -44,8 +44,9 @@ char *str_concat(char *s1, char *s2)
 
 /**
  * _strchr - | starts the file
- * @s: - | var
- * @c: - | var
+ * @s: - | string
+ * @c: - | char
+ * @i: index to be compared
  * Return: - | ends the file
  */
 

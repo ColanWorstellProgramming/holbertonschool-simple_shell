@@ -2,7 +2,7 @@
 
 /**
  * parse - the tokenizer
- *
+ * @s: path
  * Return: char **
  */
 char **parse(char *s)
@@ -17,36 +17,34 @@ char **parse(char *s)
 
 	const char *del = ":";
 
-		i = 0;
+	i = 0;
 
-		copy = _strdup(s);
-		copy2 = _strdup(s);
+	copy = _strdup(s);
+	copy2 = _strdup(s);
 
-		for (arg = strtok(copy, del); arg != NULL; arg = strtok(NULL, del))
-		{
-			amount++;
-		}
+	for (arg = strtok(copy, del); arg != NULL; arg = strtok(NULL, del))
+	{
+		amount++;
+	}
 
-		free(copy);
-		copy = NULL;
+	free(copy);
+	copy = NULL;
 
-			string = malloc(sizeof(char *) * (amount));
-			if (string == NULL)
-			{
-				exit(errno);
-			}
+	string = malloc(sizeof(char *) * (amount));
+	if (string == NULL)
+	{
+		exit(errno);
+	}
+	for (two = strtok(copy2, del); two != NULL; two = strtok(NULL, del))
+	{
+		string[i] = _strdup(two);
+		i++;
+	}
 
-			for (two = strtok(copy2, del); two != NULL; two = strtok(NULL, del))
-			{
-				string[i] = _strdup(two);
-				i++;
-			}
+	string[i] = NULL;
+	two = NULL;
+	free(copy2);
+	copy2 = NULL;
 
-			string[i] = NULL;
-
-			two = NULL;
-			free(copy2);
-			copy2 = NULL;
-			
-		return (string);
+	return (string);
 }
