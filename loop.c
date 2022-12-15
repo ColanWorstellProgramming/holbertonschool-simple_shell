@@ -47,18 +47,7 @@ void loop(char **s)
 
 		gline = getline(&buff, &size, stdin);
 
-		if (gline == -1)
-		{
-			if (isatty(STDIN_FILENO))
-			{
-				_printf("\n");
-			}
-			freemem(s);
-			free(buff);
-			free(copy);
-			free(s);
-			exit(exit_status);
-		}
+		loop2(gline, s, buff, copy);
 
 		if (_strcmp(buff, "\n") == 0)
 		{
@@ -110,18 +99,7 @@ void loop(char **s)
 
 		string[i] = NULL;
 
-		if (gline == -1)
-		{
-			if (isatty(STDIN_FILENO))
-			{
-				_printf("\n");
-			}
-			freemem(s);
-			free(buff);
-			free(copy);
-			free(s);
-			exit(exit_status);
-		}
+		loop2(gline, s, buff, copy);
 
 		j = command(string, s, num);
 		num++;

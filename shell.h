@@ -27,6 +27,7 @@ extern char **environ;
  */
 
 void loop(char **s);
+void loop2(int gline, char **s, char *buff, char *copy);
 int command(char **string, char **s, int num);
 int _execve(char *s, char **string);
 char *ret(char *r, char *comb2, char **s, char **string);
