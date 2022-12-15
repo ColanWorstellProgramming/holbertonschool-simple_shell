@@ -9,20 +9,11 @@ void loop(char **s)
 {
 	int flag;
 	int x;
-	int i;
-	int amount;
 	int gline;
-	int j;
 	size_t size;
 	char *buff;
-	char *two = NULL;
-	char *copy = NULL;
 	char **string = NULL;
-	char *arg = NULL;
-
-	const char *del = " \t\n";
-
-	int num = 1;
+	char *copy = NULL;
 
 	while (1)
 	{
@@ -32,16 +23,10 @@ void loop(char **s)
 			_printf("$ ");
 		}
 
-		arg = NULL;
 		string = NULL;
-		two = NULL;
-		copy = NULL;
 		buff = NULL;
-		j = 0;
 		size = 1;
-		i = 0;
 		x = 0;
-		amount = 1;
 		gline = -1;
 		flag = 0;
 
@@ -72,47 +57,7 @@ void loop(char **s)
 			continue;
 		}
 
-		copy = _strdup(buff);
+		loop3(s, gline, buff, string, copy);
 
-		for (arg = strtok(buff, del); arg != NULL; arg = strtok(NULL, del))
-		{
-			amount++;
-		}
-
-
-		if (gline != -1)
-		{
-			string = malloc(sizeof(char *) * (amount));
-			if (string == NULL)
-			{
-				free(buff);
-				exit(errno);
-			}
-
-			for (two = strtok(copy, del); two != NULL; two = strtok(NULL, del))
-			{
-				string[i] = two;
-				i++;
-			}
-
-		}
-
-		string[i] = NULL;
-
-		loop2(gline, s, buff, copy);
-
-		j = command(string, s, num);
-		num++;
-		free(buff);
-		free(string);
-		free(copy);
-
-		if (j == 1)
-		{
-			freemem(s);
-			free(s);
-			s = NULL;
-			exit(exit_status);
-		}
 	}
 }

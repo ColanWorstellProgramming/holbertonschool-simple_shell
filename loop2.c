@@ -2,7 +2,10 @@
 
 /**
  * loop2 - inf loop for shell
+ * @gline: test var
  * @s: path
+ * @buff: buff
+ * @copy: copy
  * Return: gline
  */
 void loop2(int gline, char **s, char *buff, char *copy)
