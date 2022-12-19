@@ -1,4 +1,4 @@
-DASH (1)			              **BSD General Commands Manual**                                   DASH(1)
+HSH (1)			              **BSD General Commands Manual**                                   HSH(1)
 
 
 
@@ -10,27 +10,20 @@ DASH (1)			              **BSD General Commands Manual**                        
 
 # NAME
  
-	dash — command interpreter (shell)
+	hsh — command interpreter (shell)
 
 # SYNOPSIS
- dash [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]
+ hsh [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]
 
-  dash -c [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] command_string [command_name [argument ...]]
+  hsh -c [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] command_string [command_name [argument ...]]
 
-  dash -s [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [argument ...]
+  hsh -s [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [argument ...]
 
 
 
 # DESCRIPTION
-**Dash** is the standard command interpreter for the system.  The current
-version of **dash** is in the process of being changed to conform with the
-POSIX 1003.2 and 1003.2a specifications for the shell.  This version has
-many features which make it appear similar in some respects to the Korn
-shell, but it is not a Korn shell clone (see ksh(1)).  Only features des‐
-ignated by POSIX, plus a few Berkeley extensions, are being incorporated
-into this shell.  This man page is not intended to be a tutorial or a
-complete specification of the shell.
-
+hsh is a compiled project replicating the bash shell hs. To use hsh simply type ./hsh into the command line to run in interactive mode, or in non-interactive mode the user can type echo "command" | ./hsh
+It also can be run as ./hsh < script to run in non-interactive mode.
 
 #   Argument List Processing
 All of the single letter options that have a corresponding name can be
