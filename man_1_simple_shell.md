@@ -10,7 +10,7 @@ DASH (1)			              **BSD General Commands Manual**                        
 
 # NAME
  
-	dash — command interpreter (shell)
+	sh — command interpreter (shell)
 
 # SYNOPSIS
  dash [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]
@@ -22,14 +22,10 @@ DASH (1)			              **BSD General Commands Manual**                        
 
 
 # DESCRIPTION
-**Dash** is the standard command interpreter for the system.  The current
-version of **dash** is in the process of being changed to conform with the
-POSIX 1003.2 and 1003.2a specifications for the shell.  This version has
-many features which make it appear similar in some respects to the Korn
-shell, but it is not a Korn shell clone (see ksh(1)).  Only features des‐
-ignated by POSIX, plus a few Berkeley extensions, are being incorporated
-into this shell.  This man page is not intended to be a tutorial or a
-complete specification of the shell.
+ The **sh** utility shall conform to the Base Definitions volume of
+ POSIX.1‐2017, Section 12.2, Utility Syntax Guidelines, with an
+ extension for support of a leading <plus-sign> ('+') as noted
+ below.
 
 
 #   Argument List Processing
@@ -40,8 +36,7 @@ to the single letter option in the description below.  Specifying a dash
 following options can be set from the command line or with the set
 builtin (described later).
 
-	       -a allexport     Export all variables assigned to.
-
+	       -a allexport     Export all variables assigned to.i
            -c               Read commands from the command_string operand in‐
                             stead of from the standard input.  Special parame‐
                             ter 0 will be set from the command_name operand
@@ -129,34 +124,17 @@ The following definitions are used throughout the rest of this document.
 # LIST OF ALLOWED FUNCTIONS AND SYSTEM CALLS
 
 **access**  (man 2 access)
- **chdir**  (man 2 chdir)
- **close** (man 2 close)
-**closedir** (man 3 closedir)
 **execve** (man 2 execve)
 **exit** (man 3 exit)
 **fflush** (man 3 fflush)
 **fork** (man 2 fork)
 **free** (man 3 free)
-**getcwd** (man 3 getcwd)
 **getline** (man 3 getline)
 **getpid** (man 2 getpid)
 **isatty** (man 3 isatty)
-**kill** (man 2 kill)
 **malloc** (man 3 malloc)
-**open** (man 2 open)
-**opendir** (man 3 opendir)
-**perror** (man 3 perror)
-**read** (man 2 read)
-**readdir** (man 3 readdir)
-**signal** (man 2 signal)
-**stat** (__xstat) (man 2 stat)
-**lstat** (__lxstat) (man 2 lstat)
-**fstat** (__fxstat) (man 2 fstat)
 **strtok** (man 3 strtok)
 **wait** (man 2 wait)
-**waitpid** (man 2 waitpid)
-**wait3** (man 2 wait3)
-**wait4** (man 2 wait4)
 **write** (man 2 write)
 
 
