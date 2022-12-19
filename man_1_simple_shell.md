@@ -1,4 +1,4 @@
-DASH (1)			              **BSD General Commands Manual**                                   DASH(1)
+HSH (1)			              **BSD General Commands Manual**                                   HSH(1)
 
 
 
@@ -10,23 +10,32 @@ DASH (1)			              **BSD General Commands Manual**                        
 
 # NAME
  
+<<<<<<< HEAD
 	sh — command interpreter (shell)
+=======
+	hsh — command interpreter (shell)
+>>>>>>> 1d022b86e8a1da1718cbf59f8d9b4bf127ea4558
 
 # SYNOPSIS
- dash [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]
+ hsh [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [command_file [argument ...]]
 
-  dash -c [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] command_string [command_name [argument ...]]
+  hsh -c [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] command_string [command_name [argument ...]]
 
-  dash -s [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [argument ...]
+  hsh -s [-aCefnuvxIimqVEbp] [+aCefnuvxIimqVEbp] [-o option_name] [+o option_name] [argument ...]
 
 
 
 # DESCRIPTION
+<<<<<<< HEAD
  The **sh** utility shall conform to the Base Definitions volume of
  POSIX.1‐2017, Section 12.2, Utility Syntax Guidelines, with an
  extension for support of a leading <plus-sign> ('+') as noted
  below.
 
+=======
+hsh is a compiled project replicating the bash shell hs. To use hsh simply type ./hsh into the command line to run in interactive mode, or in non-interactive mode the user can type echo "command" | ./hsh
+It also can be run as ./hsh < script to run in non-interactive mode.
+>>>>>>> 1d022b86e8a1da1718cbf59f8d9b4bf127ea4558
 
 #   Argument List Processing
 All of the single letter options that have a corresponding name can be
