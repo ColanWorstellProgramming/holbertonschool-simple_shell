@@ -99,7 +99,10 @@ using
 
 ## Usage
 
-```c
+* `./hsh` : Opens program in Interactive Mode.
+* `echo "ls" | ./hsh` : Opens program in Non-Interactive Mode.
+* `./hsh < file` : Runs file in Non-Interactive Mode.
+
 # Declarations for Prototypes
 
 ```
